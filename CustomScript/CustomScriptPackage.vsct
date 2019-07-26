@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Commands package="guidCustomScriptPackage">
+    <Menus>
+      <Menu guid="guidCustomScriptPackageCmdSet" id="TopLevelMenu" priority="0x100" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_START"/>
+        <Strings>
+          <MenuText>自訂腳本</MenuText>
+          <ButtonText>自訂腳本</ButtonText>
+          <CommandName>自訂腳本</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+    <Groups>
+      <Group guid="guidCustomScriptPackageCmdSet" id="TopLevelMenuGroup" priority="0x0600">
+        <Parent guid="guidCustomScriptPackageCmdSet" id="TopLevelMenu"/>
+      </Group>
+    </Groups>
+    <Buttons>
+      <Button guid="guidCustomScriptPackageCmdSet" id="CustomScriptCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidCustomScriptPackageCmdSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Invoke CustomScriptCommand</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    <Bitmaps>
+      <Bitmap guid="guidImages" href="Resources\CustomScriptCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidCustomScriptPackage" value="{0b6f7988-bdb1-47ba-9e56-4fc2f872bdac}" />
+    <GuidSymbol name="guidCustomScriptPackageCmdSet" value="{1f7fe306-9d62-42fd-80cd-16c905b6e65e}">
+      <IDSymbol name="TopLevelMenu" value="0x0F00" />
+      <IDSymbol name="TopLevelMenuGroup" value="0xF001" />
+
+      <IDSymbol name="CustomScriptCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{2f315c6c-a226-4411-8be6-9f35391f8f9c}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
