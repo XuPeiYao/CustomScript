@@ -118,6 +118,10 @@ namespace CustomScript {
             matchedCommand.Text = items[index].Name;
             matchedCommand.Path = items[index].Path;
 
+            if (!Path.IsPathRooted(matchedCommand.Path)) {
+                matchedCommand.Path = Path.Combine(GetProjectPath(), matchedCommand.Path);
+            }
+
             matchedCommand.MatchedCommandId = 0;
         }
 
@@ -184,7 +188,7 @@ namespace CustomScript {
             dte2.ItemOperations.OpenFile(ConfigPath());
         }
 
-        private string ConfigPath() {
+        private string GetProjectPath() {
             IntPtr hierarchyPointer, selectionContainerPointer;
             Object selectedObject = null;
             IVsMultiItemSelect multiItemSelect;
@@ -212,7 +216,10 @@ namespace CustomScript {
 
             Project selectedProject = selectedObject as Project;
 
-            string projectPath = Path.GetDirectoryName(selectedProject.FullName);
+            return Path.GetDirectoryName(selectedProject.FullName);
+        }
+        private string ConfigPath() {
+            string projectPath = GetProjectPath();
 
             return Path.Combine(projectPath, "customScript.json");
         }
