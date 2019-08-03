@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
 
 namespace CustomScript {
@@ -25,6 +26,8 @@ namespace CustomScript {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(CustomScriptPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideAutoLoad(UIContextGuids.SolutionHasMultipleProjects)]
+    [ProvideAutoLoad(UIContextGuids.SolutionHasSingleProject)]
     public sealed class CustomScriptPackage : AsyncPackage {
         /// <summary>
         /// CustomScriptPackage GUID string.

@@ -46,6 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomScriptCommand.cs" />
+    <Compile Include="CustomScriptItem.cs" />
+    <Compile Include="CustomScriptItemMenuCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomScriptPackage.cs" />
   </ItemGroup>
