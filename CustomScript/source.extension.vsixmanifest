@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" ?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="CustomScript.dd2f86bf-690e-4ae3-b116-9b941a514f84" Version="1.0" Language="zh-TW" Publisher="徐培堯" />
+        <Identity Id="CustomScript.dd2f86bf-690e-4ae3-b116-9b941a514f84" Version="1.0.1" Language="zh-TW" Publisher="徐培堯" />
         <DisplayName>CustomScript</DisplayName>
         <Description xml:space="preserve">自訂腳本擴充元件</Description>
     </Metadata>
