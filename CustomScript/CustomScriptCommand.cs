@@ -178,7 +178,7 @@ namespace CustomScript {
 
 
             if (!File.Exists(ConfigPath())) {
-                File.WriteAllText(ConfigPath(), "[]");
+                File.WriteAllText(ConfigPath(), "[{\"Name\":\"自訂腳本1\", \"Path\":\"test.bat\"}]");
             }
 
             dte2.ItemOperations.OpenFile(ConfigPath());
